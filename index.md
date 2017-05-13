@@ -50,7 +50,7 @@ index.less
 ```less
 body{
   color: @@color@@;
-  background:url(_include('./index.png?_ac=cdn','#cdnurl'));
+  background:url(_include('./index.png?_ac=cdn','#cdnurl#'));
 }
 ```
 
@@ -64,7 +64,7 @@ const loaders = kitty.loaders;
 gulp.task('dev',function(){
     kitty.watch('./pages/*/*.html')
         .pipe(kitty.dest('./build/pages'))
-        .pipe(kitty.dest('./build/static'))
+        .pipe(kitty.cdnDest('./build/static'))
 });
 ```
 
@@ -131,7 +131,7 @@ body{
 var css = _include('./index.less?_ac=less',{"color":"red"});
 ```
 
-*注意options需要标准的json格式，不支持逻辑判断，如果需要逻辑判断，应该在钩子函数里面完成，以保持业务代码的整洁*
+*注意options需要标准的json格式。预变量不支持逻辑判断，如果需要逻辑判断，应该在钩子函数里面完成，以保持业务代码的整洁*
 
 
 
@@ -397,7 +397,7 @@ gulp.task('dev',function(){
     kitty.loaders.mini = function(content){
       return content;
     }
-    kitty.src('./pages/*/*.html')
+    kitty.watch('./pages/*/*.html')
 });
 
 gulp.task('prod',function(){
@@ -437,9 +437,9 @@ gulp.task('prod',function(){
 });
 ```
 
-kitty-serve插件能方便启动web服务，从内存中读取内容，编译速度就更快了
+kitty-serve插件能方便启动web服务，从内存中读取内容，编译速度就更快了。
 
-使用了kitty.dest也么有关系，照样向下执行，因为流的特性使它能够一直向下传递，要不然法海都得哭了:-D
+使用了kitty.dest也么有关系，照样向下执行，因为流的特性使它能够一直向下传递。
 
 
 
