@@ -144,7 +144,7 @@ vkitty使用流处理方式，使用方式类似gulp。
 格式，请参考gulp.src
 
 ```javascript
-vfs.src(['./pages/**/*.html', '!./pages/vendor/*.html']) 
+kitty.src(['./pages/**/*.html', '!./pages/vendor/*.html']) 
 ```
 *我们只要保证入口文件引入就可以了*
 
@@ -154,7 +154,7 @@ vfs.src(['./pages/**/*.html', '!./pages/vendor/*.html'])
 和gulp.watch不同，gulp.watch是通过回调来处理，这里可直接参考gulp.src
 
 ```
-vfs.watch(['./pages/**/*.html', '!./pages/vendor/*.html']) 
+kitty.watch(['./pages/**/*.html', '!./pages/vendor/*.html']) 
 ```
 
 推荐开发时候用kitty.watch，上线时候用kitty.src
@@ -168,7 +168,7 @@ vfs.watch(['./pages/**/*.html', '!./pages/vendor/*.html'])
 格式，请参考gulp.dest
 
 ```javascript
-vfs.src(['./js/**/*.js', '!./js/vendor/*.js'])
+kitty.src(['./pages/**/*.html', '!./pages/vendor/*.html']) 
 	.pipe(kitty.dest('./build/pages'))
 ```
 
@@ -179,7 +179,7 @@ vfs.src(['./js/**/*.js', '!./js/vendor/*.js'])
 指定cdn文件生成目录
 
 ```javascript
-vfs.src(['./js/**/*.js', '!./js/vendor/*.js'])
+kitty.src(['./pages/**/*.html', '!./pages/vendor/*.html']) 
 	.pipe(kitty.dest('./build/pages'))
 	.pipe(kitty.cdnDest('./build/static'))
 ```
