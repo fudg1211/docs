@@ -144,9 +144,9 @@ vkitty使用流处理方式，使用方式类似gulp。
 格式，请参考gulp.src
 
 ```javascript
-vfs.src(['./js/**/*.js', '!./js/vendor/*.js']) 
+vfs.src(['./pages/**/*.html', '!./pages/vendor/*.html']) 
 ```
-
+*我们只要保证入口文件引入就可以了*
 
 
 ## kitty.watch
@@ -154,7 +154,7 @@ vfs.src(['./js/**/*.js', '!./js/vendor/*.js'])
 和gulp.watch不同，gulp.watch是通过回调来处理，这里可直接参考gulp.src
 
 ```
-vfs.src(['./js/**/*.js', '!./js/vendor/*.js']) 
+vfs.watch(['./pages/**/*.html', '!./pages/vendor/*.html']) 
 ```
 
 推荐开发时候用kitty.watch，上线时候用kitty.src
@@ -439,7 +439,7 @@ gulp.task('prod',function(){
 
 kitty-serve插件能方便启动web服务，从内存中读取内容，编译速度就更快了。
 
-使用了kitty.dest也么有关系，照样向下执行，因为流的特性使它能够一直向下传递。
+使用了kitty.dest也没有关系，照样向下执行，因为流的特性使它能够一直向下传递。
 
 
 
