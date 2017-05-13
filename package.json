@@ -1,0 +1,7 @@
+{
+  "title":"vkitty文档",
+  "scripts":{
+    "dev":"gitbook install;gitbook serve;",
+    "prod":"gitbook install;gitbook serve;"
+  }
+}

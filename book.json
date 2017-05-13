@@ -1,0 +1,15 @@
+{
+  "title":"vkitty文档",
+  "plugins": ["favicon"],
+  "pluginsConfig": {
+    "favicon":{
+      "shortcut": "assets/images/favicon.ico",
+      "bookmark": "assets/images/favicon.ico",
+      "appleTouch": "assets/images/favicon.ico",
+      "appleTouchMore": {
+        "120x120": "assets/images/favicon.ico",
+        "180x180": "assets/images/favicon.ico"
+      }
+    }
+  }
+}
