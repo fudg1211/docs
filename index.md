@@ -151,7 +151,7 @@ vfs.src(['./js/**/*.js', '!./js/vendor/*.js'])
 
 ## kitty.watch
 
-和gulp.watch不同，gulp.watch是通过回调来处理，可直接参考gulp.src
+和gulp.watch不同，gulp.watch是通过回调来处理，这里可直接参考gulp.src
 
 ```
 vfs.src(['./js/**/*.js', '!./js/vendor/*.js']) 
@@ -359,7 +359,7 @@ loaders.beforeCompile =  function(content){
 vkitty是如何做判断的？这里以js类型为demo
 
 1. loaders含有jstag或者jscdn的文件
-2. 是通过require加载进来的文件
+2. 或是通过require加载进来的文件
 
 如果没有上述区别，最后通过后缀来判断
 
