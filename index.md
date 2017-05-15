@@ -2,7 +2,7 @@
 
 
 
-## vkitty是什么
+## vkitty是什么？
 
 vkitty是一种前端构建工具。取名自hello kitty，其希望能够打造成一个简单、灵活的前端构建工具。
 
@@ -83,19 +83,19 @@ var config = {
 };
 ```
 
-其挂在在kitty.config下面，大部分情况下，配置是不需要改动的。
+其挂载在kitty.config下面，大部分情况下，配置是不需要改动的。
 
 
 
 # _include使用方法
 
-格式
+格式：
 
 ```html
 _include('filename?[_ac=loaders]'[,options])
 ```
 
-实例
+实例：
 
 ```html
 _include('./index.less?_ac=less',{"color":"red"});
@@ -103,9 +103,9 @@ _include('./index.less?_ac=less',{"color":"red"});
 
 
 
-* filename - 文件名称，可以是绝对路径和相对路径
-* loaders - 文件编译模块名，用`-`分隔
-* options - 选项，设置加载的预定义变量对象
+* filename - 文件名称，可以是绝对路径和相对路径。
+* loaders - 文件编译模块名，用`-`分隔。
+* options - 选项，设置加载的预定义变量对象。
 
 
 ## 预变量
@@ -119,7 +119,7 @@ var config
 };
 ```
 
-每个_include或require后可配置options
+每个_include或require后可配置options。
 
 ```html
 index.less文件
@@ -131,7 +131,7 @@ body{
 var css = _include('./index.less?_ac=less',{"color":"red"});
 ```
 
-*注意options需要标准的json格式。预变量不支持逻辑判断，如果需要逻辑判断，应该在钩子函数里面完成，以保持业务代码的整洁*
+*注意options需要标准的json格式。预变量不支持逻辑判断，如果需要逻辑判断，应该在钩子函数里面完成，以保持业务代码的整洁。*
 
 
 
@@ -141,23 +141,23 @@ vkitty使用流处理方式，使用方式类似gulp。
 
 ## kitty.src
 
-格式，请参考gulp.src
+格式，请参考gulp.src。
 
 ```javascript
 kitty.src(['./pages/**/*.html', '!./pages/vendor/*.html']) 
 ```
-*我们只要保证入口文件引入就可以了*
+*我们只要保证入口文件引入就可以了。*
 
 
 ## kitty.watch
 
-和gulp.watch不同，gulp.watch是通过回调来处理，这里可直接参考gulp.src
+和gulp.watch不同，gulp.watch是通过回调来处理后续任务，这里是直接生成可读流，可直接参考gulp.src用法。
 
 ```
 kitty.watch(['./pages/**/*.html', '!./pages/vendor/*.html']) 
 ```
 
-推荐开发时候用kitty.watch，上线时候用kitty.src
+推荐开发时候用kitty.watch，上线时候用kitty.src。
 
 
 
@@ -165,18 +165,18 @@ kitty.watch(['./pages/**/*.html', '!./pages/vendor/*.html'])
 
 指定主文件生成目录。
 
-格式，请参考gulp.dest
+格式，请参考gulp.dest。
 
 ```javascript
 kitty.src(['./pages/**/*.html', '!./pages/vendor/*.html']) 
 	.pipe(kitty.dest('./build/pages'))
 ```
 
-*注意，其只会将主文件生成到./build/pages，cdn资源文件需要使用kitty.cdnDest*
+*注意，其只会将主文件生成到./build/pages，cdn资源文件需要使用kitty.cdnDest。*
 
 ## kitty.cdnDest
 
-指定cdn文件生成目录
+指定cdn文件生成目录。
 
 ```javascript
 kitty.src(['./pages/**/*.html', '!./pages/vendor/*.html']) 
@@ -187,7 +187,7 @@ kitty.src(['./pages/**/*.html', '!./pages/vendor/*.html'])
 
 
 # 内置模块
-千万不要被下面的大量的内置模块给吓到，其实只要明白一个其他都能明白
+千万不要被下面的大量的内置模块给吓到，其实只要明白一个其他都能明白。
 ### loaders.beforeCompile
 
 钩子函数，获取文件内容后立即执行该函数，非常有作用，我们常用来做一些替换操作。
@@ -203,69 +203,76 @@ loaders.beforeCompile =  function(content){
 
 ### loaders.afterCompile
 
-钩子函数，模块编译完成后执行该函数
+钩子函数，模块编译完成后执行该函数。
 
 
 
 ## loaders.tag
 
-按照文件类型自动调用jstag、csstag、imgtag
+按照文件类型自动调用jstag、csstag、imgtag。
 
 *注意：文件的类型不是通过后缀来判断的，[点击查看类型判断](./index.md#类型判断)*
 
 #### loaders.jstag
 
-用`script`标签包裹
+用`script`标签包裹。
 
 #### loaders.csstag
 
-用`style`标签包裹
+用`style`标签包裹。
 
 #### loaders.imgtag
 
-写入`img`标签
+写入`img`标签。
 
 
 
 ## loaders.cdn
 
-按照文件类型自动调用jscdn、csscdn、imgcdn
+按照文件类型自动调用jscdn、csscdn、imgcdn。
 
 ```
 _include('./index.less?_ac=less_cdn',{"url":"https://vkitty.org/;test.css"})
 ```
 
-*注意使用后面必须有options.url*
+*注意使用后面必须有options.url。*
 
 如何写options.url，请查看[cdn处理](./index.md#cdn处理)
 
 #### loaders.jscdn
 
-返回一个`script`cdn链接的引用
+返回一个`script`cdn链接的引用。
 
 #### loaders.csscdn
 
-返回一个`link`cdn链接的引用
+返回一个`link`cdn链接的引用。
 
 ### loaders.imgcdn
 
-返回的是一个cdn地址，如果要`img`标签引用，请增加`imgtag` loader
+返回的是一个cdn地址，如果要`img`标签引用，请增加`imgtag` loader。
+
+### loaders.mediacdn
+
+返回的是一个cdn地址，适用于流媒体，如mp3\ogg\acc。
+
+
+
 
 ### loaders.mini
 
-按照文件类型压缩，自动调用jsmini、cssmini、htmlmini
+按照文件类型压缩，自动调用jsmini、cssmini、htmlmini。
 
 #### loaders.jsmini
 
-压缩js
+压缩js。
 
 #### loaders.cssmini
 
-压缩css
+压缩css。
 
 #### loaders.htmlmini
 
-压缩html
+压缩html。
 
 
 
@@ -297,7 +304,7 @@ kitty.loaders.doSomething = function(content,depend,compiler){
 
 vkitty和gulp都是使用流来处理任务，所以vkitty是原生支持gulp插件的，使用方法也是一模一样，流之间用pipe连接。
 
-下面使用了kitty.serve插件
+下面使用了kitty.serve插件。
 
 ```javascript
 const gulp = require('gulp');
@@ -315,7 +322,7 @@ gulp.task('dev',function(){
 
 ## cdn处理
 
-通过loaders.cdn后面的options必须有url参数
+通过loaders.cdn后面的options必须有url参数。
 
 ```json
 {"url":"https://vkitty.org/;test.css"}//生成文件./build/static/test.css
@@ -325,13 +332,13 @@ gulp.task('dev',function(){
 
 地址使用`;`进行分割，后面的为文件的basename，将按basename生成到kitty.cdnDest('./build/static')；
 
-我们可以在后面手工加上参数哦，比如
+我们可以在后面手工加上参数哦，比如：
 
 ```json
 {"url":"https://vkitty.org/;logo.png?v=123"}//得到的地址https://vkitty.org/logo.png?v=123
 ```
 
-每个都填是不是太麻烦！我们如何批量处理cdn呢？这个时候我们可以配合钩子函数来批量处理
+每个都填是不是太麻烦！我们如何批量处理cdn呢？这个时候我们可以配合钩子函数来批量处理。
 
 ```javascript
 index.html
@@ -354,33 +361,39 @@ loaders.beforeCompile =  function(content){
 
 文件类型不是通过后缀来唯一判断的，他优先是看调用了什么模块，因为任何后缀的文件都可以是一个脚本文件。
 
-文件的默认类型为`txt`
+文件的默认类型为`txt`。
 
-vkitty是如何做判断的？这里以js类型为demo
+vkitty是如何做判断的？这里以js类型为demo。
 
-1. loaders含有jstag或者jscdn的文件
-2. 或是通过require加载进来的文件
+1. loaders含有jstag或者jscdn的文件。
+2. 或是通过require加载进来的文件。
 
-如果没有上述区别，最后通过后缀来判断
+如果没有上述区别，最后通过后缀来判断。
 
-js后缀
+js后缀：
 
 ```js后缀
 ['.js','.vue','.coffee']
 ```
 
-也就是说上述三种后缀判断为js文件
+也就是说上述三种后缀判断为js文件。
 
-css后缀
+css后缀：
 
 ```css后缀
 ['.less','.sass','.css']
 ```
 
-img后缀
+img后缀：
 
 ```
 ['.jpg','.jpeg','.gif','.png','.webp','.ico']
+```
+
+media后缀：
+
+```
+['.wav','.mp3','.wma','.mp4','.ogg','.ape','.acc','.asf','.rm','.ra']
 ```
 
 
@@ -440,6 +453,12 @@ gulp.task('prod',function(){
 kitty-serve插件能方便启动web服务，从内存中读取内容，编译速度就更快了。
 
 使用了kitty.dest也没有关系，照样向下执行，因为流的特性使它能够一直向下传递。
+
+
+
+## bug反馈
+
+https://github.com/vkitty/vkitty/issues
 
 
 

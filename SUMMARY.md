@@ -35,3 +35,4 @@
 * [使用技巧,一定要看哦](./index.md#使用技巧)
     * [解决线上压缩，开发不压缩](./index.md#解决线上压缩，开发不压缩)
     * [使用kitty-serve插件](./index.md#使用kitty-serve插件)
+* [bug反馈](./index.md#bug反馈)
