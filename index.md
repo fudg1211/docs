@@ -27,6 +27,14 @@ vkitty是一种前端构建工具。取名自hello kitty，其希望能够打造
 
 
 
+## 安装
+
+```
+npm install vkitty --save
+```
+
+
+
 ## 起步
 
 index.html

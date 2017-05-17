@@ -2,6 +2,7 @@
 
 * [介绍](./index.md#介绍)
     * [vkitty是什么？](./index.md#vkitty是什么？)
+    * [安装](./index.md#安装)
     * [特点](./index.md#特点)
     * [起步](./index.md#起步)
     * [默认配置](./index.md#默认配置)
