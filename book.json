@@ -12,7 +12,11 @@
       }
     },
     "ga": {
-      "token": "UA-99289817-1"
+      "token": "UA-99289817-1",
+      "configuration": {
+        "cookieName": "vkittydocs",
+        "cookieDomain": "docs.vkitty.org"
+      }
     }
   }
 }
