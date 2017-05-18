@@ -1,6 +1,6 @@
 {
   "title":"vkitty文档",
-  "plugins": ["favicon"],
+  "plugins": ["favicon","ga"],
   "pluginsConfig": {
     "favicon":{
       "shortcut": "assets/images/favicon.ico",
@@ -10,6 +10,9 @@
         "120x120": "assets/images/favicon.ico",
         "180x180": "assets/images/favicon.ico"
       }
+    },
+    "ga": {
+      "token": "UA-99289817-1"
     }
   }
 }
