@@ -1,6 +1,18 @@
 {
   "title":"vkitty文档",
   "plugins": ["favicon","ga"],
+  "links": {
+    "sharing": {
+      "all": null,
+      "facebook": null,
+      "google": null,
+      "twitter": null,
+      "weibo": null
+    },
+    "sidebar": {
+      "vkitty home": "http://vkitty.org"
+    }
+  },
   "pluginsConfig": {
     "favicon":{
       "shortcut": "assets/images/favicon.ico",
