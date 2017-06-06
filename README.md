@@ -26,6 +26,9 @@ vkitty是一种前端构建工具。取名自hello kitty，其希望能够打造
 题外：如果写一个小小的组件都要用到webpack，那将是如何的酸爽/(ㄒoㄒ)/~~
 
 
+## 最新版本
+* 内置loaders.babel功能,支持es6 to es5,使用方式参考`demo.babel` 
+
 
 ## 安装
 
@@ -75,6 +78,8 @@ gulp.task('dev',function(){
         .pipe(kitty.cdnDest('./build/static'))
 });
 ```
+
+更多demo：https://github.com/vkitty/vkitty/tree/master/test/demo/compare
 
 
 
