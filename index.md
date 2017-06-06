@@ -1,7 +1,6 @@
 # 介绍
 
 
-
 ## vkitty是什么？
 
 vkitty是一种前端构建工具。取名自hello kitty，其希望能够打造成一个简单、灵活的前端构建工具。
@@ -20,11 +19,14 @@ vkitty是一种前端构建工具。取名自hello kitty，其希望能够打造
 对比起webpack
 
 优点：学习难度低，灵活，配置简单，编译速度快，文件结构会更加合理，打包的代码体积小，海量插件。
-
-缺点：暂不支持es6 to es5(真心不理解用es6去写es5代码)，错误提示不够友好，另外就是没经过时间考验，可能会出现不稳定情况。
-
 题外：如果写一个小小的组件都要用到webpack，那将是如何的酸爽/(ㄒoㄒ)/~~
 
+
+
+## 最新版本
+* 内置loaders.babel功能,支持es6 to es5,使用方式参考`demo.babel` 
+
+  ​
 
 
 ## 安装
@@ -76,7 +78,7 @@ gulp.task('dev',function(){
 });
 ```
 
-
+更多demo：https://github.com/vkitty/vkitty/tree/master/test/demo/compare
 
 ## 默认配置
 
