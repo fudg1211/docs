@@ -21,7 +21,7 @@ vkitty是一种前端构建工具。取名自hello kitty，其希望能够打造
 
 优点：学习难度低，灵活，配置简单，编译速度快，文件结构会更加合理，打包的代码体积小，海量插件。
 
-缺点：暂不支持es6 to es5(真心不理解用es6去写es5代码)，错误提示不够友好，另外就是没经过时间考验，可能会出现不稳定情况。
+缺点：错误提示不够友好，另外就是没经过时间考验，可能会出现不稳定情况。
 
 题外：如果写一个小小的组件都要用到webpack，那将是如何的酸爽/(ㄒoㄒ)/~~
 
@@ -449,7 +449,7 @@ gulp.task('dev',function(){
     };
     
     kitty.watch('./pages/*/*.html')
-        .pipe(serve({port:8080})) //不需要kitty.dest了
+        .pipe(serve.src({port:8080})) //不需要kitty.dest了
 });
 
 gulp.task('prod',function(){
@@ -467,7 +467,7 @@ kitty-serve插件能方便启动web服务，从内存中读取内容，编译速
 
 使用了kitty.dest也没有关系，照样向下执行，因为流的特性使它能够一直向下传递。
 
-
+https://www.npmjs.com/package/kitty-serve
 
 ## bug反馈
 
